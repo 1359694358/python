@@ -72,9 +72,9 @@ in  not in
 '''is 
    is not
 '''
-# a,b=3,5
-# print("a的内存地址：{1}，b的内存地址是：{0}".format(id(b),id(a)))
-# print(a is not b)
+a,b=3,5
+print("a的内存地址：{1}，b的内存地址是：{0}".format(id(b),id(a)))
+print(a is not b)
 
 '''
 数组:list,用[]表示：一种有序的集合，可以随时添加和删除其中的元素
@@ -107,10 +107,13 @@ list1=['tom','jack',8,3.14159,[1,2,3]]
 
 '''
 tp=(1,2,['a','b','c'])
+print(tp)
 print('tp第二个元素,修改之前的地址',id(tp[2]))
 tp[2].append('d')
 print('tp第二个元素，修改之后的地址',id(tp[2]))
 
+print(type(tp))
+print(isinstance(tp,type(tp)))
 
 '''字典，set
 '''
