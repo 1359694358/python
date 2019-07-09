@@ -1,4 +1,6 @@
+import json
 import os
+import requests
 '''
 回顾：注释，输入和输出，标识符，保留字，字符串，数字，// ,/ %
     切片
@@ -117,5 +119,17 @@ print(isinstance(tp,type(tp)))
 
 '''字典，set
 '''
+dic={"cao":"1","ri":"2"}
+print(dic.keys())
+print(dic.items())
+print(dic.values())
+print(dic.popitem())
+dic["fuck"]="33"
+_json=json.dumps(dic)# to Json
+print(_json)
+print(dic.get("fuck"))
 
-
+dic.pop("fuck")
+print(dic)
+# response=requests.get()  #invoke get
+# json.load(response.text) # toJson
