@@ -125,6 +125,7 @@ print(dic.items())
 print(dic.values())
 print(dic.popitem())
 dic["fuck"]="33"
+print(dic["fuck"])
 _json=json.dumps(dic)# to Json
 print(_json)
 print(dic.get("fuck"))
