@@ -4,7 +4,9 @@ import time
 
 import requests
 
-
+mystr="fuck";
+mystr.capitalize()# case first word to upper
+print(mystr.capitalize())
 
 dt=int(time.time())
 print(str(dt))
