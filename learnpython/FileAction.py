@@ -29,19 +29,19 @@ for index in range(len(listArr)):
 excel.save("./python_handle_excel.xls")
 print("================================")
 #read excel
-# readExce=xlrd.open_workbook("./python_handle_excel.xls")
-# # readExce=openpyxl.load_workbook("./python_handle_excel.xls")
-# # readSheet=readExce.sheet_by_index(0)
-# readSheet=readExce.sheet_by_name("python_sheet")
-# rows=readSheet.nrows
-# cols=readSheet.ncols
-# for rowIndex in range(rows):
-#     print(readSheet.row_values(rowIndex,0,cols))
-#     print("-----")
-#     for colIndex in range(cols):
-#         print(readSheet.col_values(colIndex))
-#         print("||||||")
-#         print(readSheet.cell_value(rowIndex,colIndex))
+readExce=xlrd.open_workbook("./python_handle_excel.xls")
+# readExce=openpyxl.load_workbook("./python_handle_excel.xls")
+# readSheet=readExce.sheet_by_index(0)
+readSheet=readExce.sheet_by_name("python_sheet")
+rows=readSheet.nrows
+cols=readSheet.ncols
+for rowIndex in range(rows):
+    print(readSheet.row_values(rowIndex,0,cols))
+    print("-----")
+    for colIndex in range(cols):
+        print(readSheet.col_values(colIndex))
+        print("||||||")
+        print(readSheet.cell_value(rowIndex,colIndex))
 
 
 
@@ -58,7 +58,6 @@ wb=openpyxl.Workbook()#direct create a xlsx file
 wb=openpyxl.load_workbook("./openpy.xlsx") # load an exist file
 pysheet=wb.active
 pysheet.title=u"pyxls title"
-
 appendTitle=False
 for index in caseJson:
     keys= []
