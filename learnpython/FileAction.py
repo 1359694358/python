@@ -56,6 +56,8 @@ caseJson=json.loads(jsonData)
 print(caseJson)
 wb=openpyxl.Workbook()#direct create a xlsx file
 wb=openpyxl.load_workbook("./openpy.xlsx") # load an exist file
+print(wb.sheetnames)
+wb._sheets
 pysheet=wb.active
 pysheet.title=u"pyxls title"
 appendTitle=False

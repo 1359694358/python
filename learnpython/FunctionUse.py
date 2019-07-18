@@ -58,6 +58,6 @@ f=lambda arg1,arg2:arg1+arg2
 result=f(1,2)
 print(result)
 
-xxoo=lambda boy,*girl:print(boy+" fuck "+str(girl))
+xxoo=lambda boy,*girl,**tools:print(boy+" fuck "+str(girl)+str(tools))
 
-xxoo("Jay","Senina","Ella","YangMi","WangO")
+xxoo("Jay","Senina","Ella","YangMi","WangO",shoes="siwa")
