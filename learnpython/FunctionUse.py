@@ -61,3 +61,12 @@ print(result)
 xxoo=lambda boy,*girl,**tools:print(boy+" fuck "+str(girl)+str(tools))
 
 xxoo("Jay","Senina","Ella","YangMi","WangO",shoes="siwa")
+
+
+def jiechen(num):
+    if num==1:
+        return num
+    return num*(jiechen(num-1))
+
+num=input("please input a integer:")
+print(jiechen(int(num)))
