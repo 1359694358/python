@@ -1,0 +1,155 @@
+
+<html>
+	<head>
+		<title>百度一下，你就知道</title>
+		<link rel="icon" href="https://7.url.cn/edu/user/81241de6922181a04503399e87406008.png"/>
+		<link href="./baidu.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function onFocus(e)
+			{
+				console.log(" onFocus"+e)
+
+				findChecked()
+			}
+
+			function findChecked()
+			{
+				var country_radio_list=document.getElementById("country_radio_list")
+				var search_input_text=document.getElementById("search_input_text")
+				for (var index=0;country_radio_list!=null&&index<country_radio_list.children.length;index++)
+				{
+					var radioItem=country_radio_list.children[index]
+					if(radioItem.checked)
+					{
+						search_input_text.value=radioItem.value
+					}
+					console.log(radioItem.checked)
+				}
+			}
+
+
+
+			function onBlur(e)
+			{
+				console.log("onBlur"+e)
+			}
+			function onRadioClick(e)
+			{
+				alert(e)
+			}
+
+			function onClick(radioItem)
+			{
+				if(radioItem.checked)
+				{
+					var search_input_text=document.getElementById("search_input_text")
+					search_input_text.value=radioItem.value
+				}
+			}
+		</script>
+	</head>
+
+
+	<!--写到html中的叫内联样式-->
+	<style>
+		#baidu_logo
+		{
+			margin-bottom:10px;
+			width:270px;
+			height:129px
+		}
+		.linkstyle
+		{
+			padding:10px;
+			font-size:13px;
+			font-weight:700;
+		}
+		.baidu_footer
+		{
+			position: relative;
+			text-align:center;
+			margin-top:14%
+		}
+	</style>
+	<!--position为absolute时有top就不能同时写 bottom  有left就不能同时写 rignt
+就是以上或下 以左 或右为方向对齐  可以写像素  或是百分比-->
+	<!--<div style="position: absolute;bottom:10%; float: right">
+		<a style="padding:10px" href="http://www.baidu.com">新闻</a>
+		<a style="padding:10px" href="http://www.baidu.com">hao123</a>
+		<a style="padding:10px" href="http://www.baidu.com">地图</a>
+		<a style="padding:10px" href="http://www.baidu.com">视频</a>
+		<a style="padding:10px" href="http://www.baidu.com">贴吧</a>
+		<a style="padding:10px" href="http://www.baidu.com">学术</a>
+		<a style="padding:10px" href="http://www.baidu.com">登录</a>
+		<a style="padding:10px" href="http://www.baidu.com">设置</a>
+	</div>-->
+	<body onload="findChecked()">
+
+
+		<div style="position: relative;float: right">
+			<a class="linkstyle" href="http://www.baidu.com">新闻</a>
+			<a class="linkstyle" href="http://www.baidu.com">hao123</a>
+			<a class="linkstyle" href="http://www.baidu.com">地图</a>
+			<a class="linkstyle" href="http://www.baidu.com">视频</a>
+			<a class="linkstyle" href="http://www.baidu.com">贴吧</a>
+			<a class="linkstyle" href="http://www.baidu.com">学术</a>
+			<a class="linkstyle" href="http://www.baidu.com">登录</a>
+			<a class="linkstyle" href="http://www.baidu.com">设置</a>
+			<span style="background:#38f;color:#FFF;font-size:13px;padding:3px">更多产品</span>
+		</div>
+		<br>
+		<div style="text-align:center;margin-top:35px">
+			<div>
+				<img id="baidu_logo" src="bd_logo1.png"/>
+			</div>
+			<div style="text-align:center;margin-top:15px">
+				<form id="search_submit_form" action="https://www.baidu.com/s" method="GET">
+					<input id="search_input_text" name="wd" type="text" onfocus="onFocus(this)" onblur="onBlur(this)" style="width:540px;height:36px"/>
+					<input type="submit" style="width:100px;height:36px;background:#3385ff;color:#FFF;border:1px solid:#2d78f4;font-size:15px;margin-left:-5px;letter-spacing:1px"  value="百度一下"/>
+
+				</form>
+
+				<span>
+				<div id="country_radio_list" style="text-align:center;font-size:15px;margin-top:10px">
+					<input onclick="onClick(this)"  type="radio" name="country_radio" value="齐">齐</input>
+					<input onclick="onClick(this)"  type="radio" name="country_radio" value="楚">楚</input>
+					<input onclick="onClick(this)"  type="radio" name="country_radio" value="燕">燕</input>
+					<input onclick="onClick(this)"  type="radio" name="country_radio" value="韩">韩</input>
+					<input onclick="onClick(this)"  type="radio" name="country_radio" value="赵">赵</input>
+					<input onclick="onClick(this)"  type="radio" name="country_radio" value="魏">魏</input>
+					<input onclick="onClick(this)"  type="radio" name="country_radio" checked="true" value="秦">秦</input>
+				</div>
+
+				<div id="country_check_list" style="text-align:center;font-size:15px;margin-top:10px">
+					<input onclick="onClick(this)"  type="checkbox" name="country_check" checked="true"  value="宋">宋</input>
+					<input onclick="onClick(this)"  type="checkbox" name="country_check" checked="true"  value="卫">卫</input>
+					<input onclick="onClick(this)"  type="checkbox" name="country_check" checked="true"  value="徐">徐</input>
+					<input onclick="onClick(this)"  type="checkbox" name="country_check" value="陈">陈</input>
+					<input onclick="onClick(this)"  type="checkbox" name="country_check" value="蔡">蔡</input>
+					<input onclick="onClick(this)"  type="checkbox" name="country_check" checked="true" value="虢">虢</input>
+					<input onclick="onClick(this)"  type="checkbox" name="country_check" checked="true" value="虞">虞</input>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="baidu_footer">
+			<div style="position: relative">
+				<img width="60px" height="60px" src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_efde696.png"/>
+			</div>
+
+			<div style="position: relative;padding-top:5px">
+				<b style="color:#666; font-weight=700;font-size:12px">百度</b>
+			</div>
+
+			<div id="baidu_footer_about_div">
+				<a class="baid_footer_about" href="http://www.baidu.com">把百度设为主页</a>
+				<a class="baid_footer_about" href="http://www.baidu.com">关于百度</a>
+				<a class="baid_footer_about" href="http://www.baidu.com">About  Baidu</a>
+				<a class="baid_footer_about" href="http://www.baidu.com">百度推广</a>
+			<div>
+			<div id="baidu_use_read">
+				<p id="cp">?2019&nbsp;Baidu&nbsp;<a class="baidu_use_read_href" href="http://www.baidu.com/duty/" >使用百度前必读</a>&nbsp;<a href="http://jianyi.baidu.com/" class="baidu_use_read_href">意见反馈</a>&nbsp;京ICP证030173号&nbsp;<i id="icon1"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="baidu_use_read_href" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001">京公网安备11000002000001号</a>&nbsp;<i id="icon2"></i></p>
+			<div>
+		</div>
+	</body>
+</html>
