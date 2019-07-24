@@ -1,10 +1,16 @@
 
 class Reflect:
+    count=0
+    def __init__(self):
+        self.count+=1
     def method(self):
-        print("call method")
+        print("call method",self.count)
 
     proper="proper"
 
 
 reflect=Reflect()
-print(reflect)
+
+ff=Reflect()
+
+ff.method()
