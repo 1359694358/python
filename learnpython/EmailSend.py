@@ -35,14 +35,18 @@ def sendEmailHTMLByMulipart():
     #     htmlData = htmlData + itemStr
     content = MIMEMultipart()
     content.attach(MIMEText("email  muilpart","plain",'utf-8'))
-    content.attach(MIMEText(open(r".\baidu.html",encoding='utf-8').read()))
+    htmldata=open("./baidu.html",encoding='utf-8').read()
+    print(type(htmldata))
+    appendix=MIMEText(htmldata)
+    appendix['Content-Disposition']='attachment; filename="baidu.html"'
+
+    content.attach(appendix)
 
     server = smtplib.SMTP(smtpserver, 25)
     server.login(account, psw)
     content['Subject'] = Header("我是烧饼哥HTML", 'utf-8')
     content['From'] = account
     content['To'] = reciver
-    content['Content -Disposition']="attachment:filename='baidu.html'"
     server.sendmail(account, reciver, content.as_string())
     server.quit()
     pass
