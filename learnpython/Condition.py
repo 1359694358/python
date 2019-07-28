@@ -16,6 +16,7 @@ response=requests.get(url)
 print(response.text)
 if response.status_code==200:
     jobj=json.loads(response.text)
+    # jobj=eval(jobj)   '  parse to  "  单引号转双引号
     print(jobj["data"]["ip"])
 
 
