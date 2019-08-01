@@ -20,6 +20,10 @@ driver.switch_to.alert.accept()
 #$x("//a[contains(text(),'移动')]")
 #$x("//a[starts-with(text(),'练习')]")
 driver.find_element_by_xpath("//a[@href='/signin']").click()
+
+#svg  name='svg'
+#$x("//*[name()='svg']")
+
 driver.find_element_by_name("username").send_keys("15902127953")
 driver.find_element_by_name("password").send_keys("123456")
 driver.find_element_by_xpath("/html/body/form/p[3]/button").click()
