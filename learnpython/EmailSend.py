@@ -27,14 +27,14 @@ def sendEmailHTMLByMulipart():
     smtpserver = "smtp.163.com"
     account = "zouxudongatcd@163.com"
     psw = input("input account psw:")
-    reciver = "1359694358@qq.com"
+    reciver = "1059315239@qq.com"
     # htmlfile = open("./baidu.html", "r+")
     # result = htmlfile.readlines()
     # htmlData = ""
     # for itemStr in result:
     #     htmlData = htmlData + itemStr
     content = MIMEMultipart()
-    content.attach(MIMEText("email  muilpart","plain",'utf-8'))
+    content.attach(MIMEText("小星星  收到了么","plain",'utf-8'))
     htmldata=open("./baidu.html",encoding='utf-8').read()
     print(type(htmldata))
     appendix=MIMEText(htmldata)
