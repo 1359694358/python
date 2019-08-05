@@ -10,6 +10,8 @@ options.add_experimental_option("mobileEmulation",mobile_elements)
 driver=webdriver.Chrome(options=options)
 driver.implicitly_wait(10)
 driver.get("http://127.0.0.1:5000")
+js="window.open('https://www.baidu.com')"
+driver.execute_script(js)
 # driver.find_element_by_id("testid").click()
 # driver.switch_to.alert.accept()
 # driver.switch_to.default_content()
@@ -23,6 +25,12 @@ driver.find_element_by_xpath("//a[@href='/signin']").click()
 
 #svg  name='svg'
 #$x("//*[name()='svg']")
+'''
+     * 百度 网易  新浪  腾讯 京东  淘宝
+     * 0 1 2 3 4 5
+     *
+     * 0 5 4 3 2 1
+'''
 
 driver.find_element_by_name("username").send_keys("15902127953")
 driver.find_element_by_name("password").send_keys("123456")

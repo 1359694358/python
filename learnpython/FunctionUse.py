@@ -18,6 +18,7 @@ fuck("FF","1222")
 '''
 
 def say(*args):
+    print(type(args))
     for item in args:
         print(item)
 
