@@ -76,6 +76,11 @@ class BaseSelenium(object):
                 break
         return
 
+    def switch_table_by_index(self,index):
+        handles=self.driver.window_handles
+        self.driver.switch_to.window(handles[index])
+        return
+
     def switch_table_by_url(self,url):
         handles=self.driver.window_handles
         for itemHandle in handles:
