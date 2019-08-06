@@ -9,6 +9,9 @@ class ZhengZhouUnivercity(BaseSelenium):
         return
 
 zhenzhou=ZhengZhouUnivercity()
+config=zhenzhou.readYml("./config.yml")
+print(config['url'])
+
 zhenzhou.openUrl("http://www.zzu.edu.cn/?tdsourcetag=s_pcqq_aiomsg")
 
 frame=zhenzhou.waitFindElementByValue(By.NAME,"zzu_top_6")

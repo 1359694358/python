@@ -1,5 +1,6 @@
 import time
 
+import yaml
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
@@ -97,3 +98,7 @@ class BaseSelenium(object):
         self.driver.close()
         return
 
+    def readYml(self,path):
+        with open(path,"r") as ymlFile:
+            config=yaml.load(ymlFile, yaml.FullLoader)
+            return config
