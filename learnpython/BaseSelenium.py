@@ -31,12 +31,10 @@ class BaseSelenium(object):
         return self.driver.find_element(by,value)
 
     def waitFindElement(self,findElement_method):
-        print("waitFindElement")
         waitResult= WebDriverWait(self.driver,self.wait_timeout,self.wait_check_inteval).until(method=findElement_method)
         return waitResult
 
     def waitFindElementByValue(self,by,value):
-        print("waitFindElement")
         waitResult= WebDriverWait(self.driver,self.wait_timeout,self.wait_check_inteval).until(EC.visibility_of_element_located((by,value)))
         return waitResult
 
@@ -50,7 +48,6 @@ class BaseSelenium(object):
 
     def move2Element(self,by,value):
         element=self.waitFindElement(EC.visibility_of_element_located((by,value)))
-        print(element)
         ActionChains(self.driver).move_to_element(element).perform()
         return
 
