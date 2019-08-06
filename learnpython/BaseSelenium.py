@@ -70,14 +70,23 @@ class BaseSelenium(object):
         time.sleep(t)
         return
 
-    def switch_table(self,index):
+    def switch_table_by_title(self,title):
         handles=self.driver.window_handles
-        first=handles[0]
-        handles.remove(handles[0])
-        handles.append(first)
-        handles.reverse()
-        self.driver.switch_to.window(handles[index])
-        print(type(handles),handles)
+        for itemHandle in handles:
+            self.driver.switch_to.window(itemHandle)
+            tableTitle =self.driver.title
+            if title in tableTitle:
+                break
+        return
+
+    def switch_table_by_url(self,url):
+        handles=self.driver.window_handles
+        for itemHandle in handles:
+            self.driver.switch_to.window(itemHandle)
+            curUrl =self.driver.current_url
+            if url in curUrl:
+                break
+        return
 
     def quit(self):
         self.driver.quit()
