@@ -1,0 +1,4 @@
+url: https://www.baidu.com
+browser:
+  type: chrome  # ie firefox
+  mode: headless  # 无头浏览器

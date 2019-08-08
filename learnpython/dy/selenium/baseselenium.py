@@ -23,7 +23,6 @@ class BaseSelenium(object):
         self.driver.get(url)
         return
 
-
     def setImplicitlyWaitTime(self,time):
         self.driver.implicitly_wait(time)
         return

@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from BaseSelenium import BaseSelenium
+from dy.selenium.baseselenium import BaseSelenium
 
 
 class ZhengZhouUnivercity(BaseSelenium):

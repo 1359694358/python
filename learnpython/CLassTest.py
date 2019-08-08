@@ -14,3 +14,9 @@ reflect=Reflect()
 ff=Reflect()
 
 ff.method()
+
+from pkg.TestPkg import Test
+from pkg.TestPkg import callF
+tpk=Test()
+tpk.fuck()
+callF()
