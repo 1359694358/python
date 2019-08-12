@@ -1,0 +1,5 @@
+type: chrome  # chrome  ie  firefox
+position: 0 0 #  xPosition yPosition
+size: 550 400
+mode: headless # headless normal
+driverpath: /home/document/test/javaweb/loginserver/src/test/resources/drivers/chromedriver #/home/document/test/javaweb/loginserver/src/test/resources/drivers/geckodriver  # the internet explorer driver path
