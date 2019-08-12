@@ -23,6 +23,7 @@ driver.switch_to.alert.accept()
 #$x("//a[starts-with(text(),'练习')]")
 driver.find_element_by_xpath("//a[@href='/signin']").click()
 
+
 #svg  name='svg'
 #$x("//*[name()='svg']")
 '''

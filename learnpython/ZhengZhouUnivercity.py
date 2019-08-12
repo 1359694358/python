@@ -1,15 +1,15 @@
 from selenium.webdriver.common.by import By
+from dy.selenium.yamlhandle import readYml
+from dy.selenium.toolkit import SeleniumToolKit
 
-from dy.selenium.baseselenium import BaseSelenium
 
-
-class ZhengZhouUnivercity(BaseSelenium):
+class ZhengZhouUnivercity(SeleniumToolKit):
     def __init__(self):
-        BaseSelenium.__init__(self)
+        SeleniumToolKit.__init__(self)
         return
 
 zhenzhou=ZhengZhouUnivercity()
-config=zhenzhou.readYml("./config.yml")
+config=readYml("./config.yml")
 print(config['url'])
 
 zhenzhou.openUrl("http://www.zzu.edu.cn/?tdsourcetag=s_pcqq_aiomsg")

@@ -1,19 +1,33 @@
+import re
 import time
-
-import yaml
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class BaseSelenium(object):
-    Chrome=1
-    FireFox=2
-    def __init__(self,browserType=Chrome):
-        if browserType==BaseSelenium.Chrome:
-            self.driver=webdriver.Chrome()
-        else:
-            self.driver=webdriver.Firefox()
+from dy.selenium.yamlhandle import readYml
+
+
+class SeleniumToolKit(object):
+    def __init__(self,browser_cfgpath=None):
+        if browser_cfgpath != None:
+            config=readYml(browser_cfgpath)
+            print(config)
+            type=config['type']
+            driverpath=config['driverpath']
+            isChrome=bool(re.search('chrome',type,re.IGNORECASE))
+            isFireFox = bool(re.search('fire', type, re.IGNORECASE))
+            if isChrome:
+                if not driverpath:
+                    driverpath='chromedriver'
+                self.driver = webdriver.Chrome(executable_path=driverpath)
+            elif isFireFox:
+                if not driverpath:
+                    driverpath='geckodriver'
+                self.driver = webdriver.Firefox(executable_path=driverpath)
+            position=config['position']
+            size=config['size']
+            mode=config['mode']
         self.wait_timeout=10
         self.wait_check_inteval=0.5
         return
@@ -96,8 +110,3 @@ class BaseSelenium(object):
     def close(self):
         self.driver.close()
         return
-
-    def readYml(self,path):
-        with open(path,"r") as ymlFile:
-            config=yaml.load(ymlFile, yaml.FullLoader)
-            return config

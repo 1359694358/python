@@ -1,0 +1,6 @@
+suite_customsutie: # test suite node, start with suite_
+    case: #case node ,you can add many case,format start with case_
+      get: https://www.baidu.com
+      input: id=kw 我爱你中国
+      click: id=su
+      wait: 3
