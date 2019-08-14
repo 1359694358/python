@@ -2,12 +2,12 @@ import unittest
 
 from dy.selenium.toolkit import SeleniumToolKit
 from dy.selenium.yamlhandle import readYml
-class SeleniumCase(unittest.TestCase):SeleniumToolKit(brower_cfgpath)
-        print(self.cas
+class SeleniumCase(unittest.TestCase,SeleniumToolKit):
     def __init__(self,casepath,brower_cfgpath):
-        SeleniumCase.__init__(self,"")
+        unittest.TestCase.__init__(self,"")
+        SeleniumToolKit.__init__(self,brower_cfgpath)
         self.caseconfig=readYml(casepath)
-        self.driverkit=econfig)
+        print(self.caseconfig)
         return
 
     def setUp(self):
@@ -15,5 +15,5 @@ class SeleniumCase(unittest.TestCase):SeleniumToolKit(brower_cfgpath)
         pass
 
     def tearDown(self):
-        self.driverkit.quit()
+        self.quit()
         pass

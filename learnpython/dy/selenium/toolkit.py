@@ -28,6 +28,8 @@ class SeleniumToolKit(object):
             position=config['position']
             size=config['size']
             mode=config['mode']
+            if len(size)==2 and len(mode)==2:
+                self.driver.set_window_rect(int(position[0]),int(position[1]),int(size[0]),int(size[1]))
         self.wait_timeout=10
         self.wait_check_inteval=0.5
         return
