@@ -12,7 +12,7 @@ def fuck():
 
 dm=DynamicClass()
 setattr(dm,"fuck",fuck)
-result=getattr(DynamicClass,"fuck")
+result=getattr(dm,"fuck")
 print(result)
 
 dm.fuck()
