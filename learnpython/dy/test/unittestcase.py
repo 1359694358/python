@@ -1,13 +1,13 @@
 import types
-import unittest
+import pyunittest
 '''
 
-class MyTestCase(unittest.TestCase):
+class MyTestCase(pyunittest.TestCase):
 
-        # unittest.TestCase.__init__("test_fuck")#,'./testcase.yml','./browser_config.yml')
+        # pyunittest.TestCase.__init__("test_fuck")#,'./testcase.yml','./browser_config.yml')
     def __init__(self,methodName):
         print(id(self))
-        unittest.TestCase.__init__(self,"runTest")
+        pyunittest.TestCase.__init__(self,"runTest")
     @classmethod
     def setUpClass(cls):
         print("setUpClass")
@@ -26,9 +26,9 @@ class MyTestCase(unittest.TestCase):
         # print(bool(re.search(str1,str2,re.IGNORECASE)))
         # print(chr(75))
         # print(ord('A'))'''
-import unittest
+import pyunittest
 # 执行测试的类
-class WidgetTestCase(unittest.TestCase):
+class WidgetTestCase(pyunittest.TestCase):
 
     def tearDown(self):
         self.widget = None
@@ -43,25 +43,25 @@ def suite():
     testMyMethod=lambda self:print("hehe dynamic test method")
     case.testMyMethod=testMyMethod
     setattr(case,"testMyMethod",testMyMethod)
-    suite = unittest.TestSuite()
+    suite = pyunittest.TestSuite()
     suite.addTest(case)
     return suite
 # 测试
 # if __name__ == "__main__":
 #     print(1111)
-#     unittest.main(defaultTest='suite')
-    # suite = unittest.TestSuite()
+#     pyunittest.main(defaultTest='suite')
+    # suite = pyunittest.TestSuite()
     # case = WidgetTestCase("testMyMethod")
     # case.testMyMethod=lambda self:print("hehe dynamic test method")
     # case.testMyMethod()
     # suite.addTest(case)
     # suite.addTest(WidgetTestCase("testMyMethod"))
     # # 执行测试
-    # runner = unittest.TextTestRunner()
+    # runner = pyunittest.TextTestRunner()
     # runner.run(suite)
-    # unittest.main(defaultTest = 'suite')
-    # unittest.main(defaultTest = 'suite')#运行所有的测试用例
+    # pyunittest.main(defaultTest = 'suite')
+    # pyunittest.main(defaultTest = 'suite')#运行所有的测试用例
 
 if __name__ == "__main__":
-    # unittest.main(defaultTest='suite')
-    unittest.mai
+    # pyunittest.main(defaultTest='suite')
+    pyunittest.mai

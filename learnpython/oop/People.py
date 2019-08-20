@@ -7,7 +7,7 @@ class People():
         pass
     @classmethod
     def say(self):
-        print(self.name)
+        print(self)
         pass
 
 People.say()

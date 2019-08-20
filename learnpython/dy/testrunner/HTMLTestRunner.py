@@ -5,7 +5,7 @@ generates a HTML report to show the result at a glance.
 
 The simplest way to use this is to invoke its main method. E.g.
 
-    import unittest
+    import pyunittest
     import HTMLTestRunner
 
     ... define your tests ...
@@ -15,7 +15,7 @@ The simplest way to use this is to invoke its main method. E.g.
 
 
 For more customization options, instantiates a HTMLTestRunner object.
-HTMLTestRunner is a counterpart to unittest's TextTestRunner. E.g.
+HTMLTestRunner is a counterpart to pyunittest's TextTestRunner. E.g.
 
     # output to a file
     fp = file('my_report.html', 'wb')
@@ -98,7 +98,7 @@ import datetime
 import sys
 import io
 import time
-import unittest
+import pyunittest
 from xml.sax import saxutils
 
 
@@ -530,11 +530,11 @@ a.popup_link:hover {
 # -------------------- The end of the Template class -------------------
 
 
-TestResult = unittest.TestResult
+TestResult = pyunittest.TestResult
 
 class _TestResult(TestResult):
     # note: _TestResult is a pure representation of results.
-    # It lacks the output and reporting ability compares to unittest._TextTestResult.
+    # It lacks the output and reporting ability compares to pyunittest._TextTestResult.
 
     def __init__(self, verbosity=1):
         TestResult.__init__(self)
@@ -583,7 +583,7 @@ class _TestResult(TestResult):
 
     def stopTest(self, test):
         # Usually one of addSuccess, addError or addFailure would have been called.
-        # But there are some path in unittest that would bypass this.
+        # But there are some path in pyunittest that would bypass this.
         # We must disconnect stdout in stopTest(), which is guaranteed to be called.
         self.complete_output()
 
@@ -701,7 +701,7 @@ class HTMLTestRunner(Template_mixin):
 
 
     def sortResult(self, result_list):
-        # unittest does not seems to run in any particular order.
+        # pyunittest does not seems to run in any particular order.
         # Here at least we want to group them together by class.
         rmap = {}
         classes = []
@@ -881,12 +881,12 @@ class HTMLTestRunner(Template_mixin):
 # Facilities for running tests from the command line
 ##############################################################################
 
-# Note: Reuse unittest.TestProgram to launch test. In the future we may
+# Note: Reuse pyunittest.TestProgram to launch test. In the future we may
 # build our own launcher to support more specific command line
 # parameters like test title, CSS, etc.
-class TestProgram(unittest.TestProgram):
+class TestProgram(pyunittest.TestProgram):
     """
-    A variation of the unittest.TestProgram. Please refer to the base
+    A variation of the pyunittest.TestProgram. Please refer to the base
     class for command line parameters.
     """
     def runTests(self):
@@ -895,7 +895,7 @@ class TestProgram(unittest.TestProgram):
         # we have to instantiate HTMLTestRunner before we know self.verbosity.
         if self.testRunner is None:
             self.testRunner = HTMLTestRunner(verbosity=self.verbosity)
-        unittest.TestProgram.runTests(self)
+        pyunittest.TestProgram.runTests(self)
 
 main = TestProgram
 
