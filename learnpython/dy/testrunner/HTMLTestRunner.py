@@ -5,7 +5,7 @@ generates a HTML report to show the result at a glance.
 
 The simplest way to use this is to invoke its main method. E.g.
 
-    import pyunittest
+    import unittest
     import HTMLTestRunner
 
     ... define your tests ...
@@ -98,7 +98,7 @@ import datetime
 import sys
 import io
 import time
-import pyunittest
+import unittest
 from xml.sax import saxutils
 
 
@@ -530,11 +530,11 @@ a.popup_link:hover {
 # -------------------- The end of the Template class -------------------
 
 
-TestResult = pyunittest.TestResult
+TestResult = unittest.TestResult
 
 class _TestResult(TestResult):
     # note: _TestResult is a pure representation of results.
-    # It lacks the output and reporting ability compares to pyunittest._TextTestResult.
+    # It lacks the output and reporting ability compares to unittest._TextTestResult.
 
     def __init__(self, verbosity=1):
         TestResult.__init__(self)
@@ -881,12 +881,12 @@ class HTMLTestRunner(Template_mixin):
 # Facilities for running tests from the command line
 ##############################################################################
 
-# Note: Reuse pyunittest.TestProgram to launch test. In the future we may
+# Note: Reuse unittest.TestProgram to launch test. In the future we may
 # build our own launcher to support more specific command line
 # parameters like test title, CSS, etc.
-class TestProgram(pyunittest.TestProgram):
+class TestProgram(unittest.TestProgram):
     """
-    A variation of the pyunittest.TestProgram. Please refer to the base
+    A variation of the unittest.TestProgram. Please refer to the base
     class for command line parameters.
     """
     def runTests(self):
@@ -895,7 +895,7 @@ class TestProgram(pyunittest.TestProgram):
         # we have to instantiate HTMLTestRunner before we know self.verbosity.
         if self.testRunner is None:
             self.testRunner = HTMLTestRunner(verbosity=self.verbosity)
-        pyunittest.TestProgram.runTests(self)
+        unittest.TestProgram.runTests(self)
 
 main = TestProgram
 

@@ -33,8 +33,8 @@ class Child(Parent):
 # print(A.x)  #调用父类的类变量
 # A.parent_methon()
 #
-# import pyunittest
-# class Test(pyunittest.TestCase):
+# import unittest
+# class Test(unittest.TestCase):
 #     def test(self):
 #         self.assertEqual()
 
