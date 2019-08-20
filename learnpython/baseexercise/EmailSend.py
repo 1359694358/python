@@ -3,8 +3,6 @@ from email.mime.text import  MIMEText
 from email.mime.multipart import MIMEMultipart
 import smtplib
 
-from PythonEmail import PythonEmail
-
 
 def sendEmailText():
     smtpserver="smtp.163.com"
