@@ -10,8 +10,8 @@ Test Teardown  close_browser
 
 *** Test Cases ***
 case1
-       select frame   name=zzu_top_6
-       mouse over   xpath=//li[contains(text(),'院系专业')]
+       select_frame_wait   name=zzu_top_6
+       mouse_over_wait   xpath=//li[contains(text(),'院系专业')]
        click_element_wait   xpath=//span[contains(text(),'实验动物中心')]
        ${windows}   list windows
        ${index}  evaluate  ${windows}[0]
