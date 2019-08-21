@@ -13,7 +13,8 @@ case1
        select_frame_wait   name=zzu_top_6
        mouse_over_wait   xpath=//li[contains(text(),'院系专业')]
        click_element_wait   xpath=//span[contains(text(),'实验动物中心')]
-       ${windows}   list windows
+       ${windows}   get window handles
        ${index}  evaluate  ${windows}[0]
+       sleep  3s
        select window   ${index}
        sleep  3s
