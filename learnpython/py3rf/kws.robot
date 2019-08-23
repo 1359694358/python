@@ -26,3 +26,8 @@ select_frame_wait
         [Arguments]  ${locator}
          wait until element is visible  ${locator}  10
          select frame  ${locator}
+
+
+open_chrome
+        [Arguments]  ${url}
+        open browser  ${url}  chrome

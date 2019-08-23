@@ -5,7 +5,7 @@ Resource   kws.robot
 Resource   ./login/login.robot
 #Suite Setup  #所有用例执行之前
 #Suite Teardown  #所有用例执行后
-Test Setup  open_browser  ${zhendaurl}  chrome
+Test Setup  open_chrome  ${zhendaurl}
 Test Teardown  close_browser
 
 *** Test Cases ***
