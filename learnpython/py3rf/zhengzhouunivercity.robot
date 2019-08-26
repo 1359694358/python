@@ -10,6 +10,10 @@ Test Teardown  close_browser
 
 *** Test Cases ***
 case1
+       ${anodecount}    get matching xpath count   //a
+       should be equal   ${anodecount}   52
+       log  ${anodecount}
+       xpath should match x times   //a  52
        select_frame_wait   name=zzu_top_6
        mouse_over_wait   xpath=//li[contains(text(),'院系专业')]
        click_element_wait   xpath=//span[contains(text(),'实验动物中心')]

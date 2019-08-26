@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190826 11:09:41.251" generator="Robot 3.0.4 (Python 2.7.15+ on linux2)">
+<suite source="/home/document/test/python/learnpython/py3rf/conditionexpr/conditionex.robot" id="s1" name="Conditionex">
+<test id="s1-t1" name="normalLoopCase">
+<kw type="for" name="${item} IN RANGE [ 2 | 10 | 2 ]">
+<kw type="foritem" name="${item} = 2">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20190826 11:09:41.498" level="INFO">2</msg>
+<status status="PASS" endtime="20190826 11:09:41.498" starttime="20190826 11:09:41.498"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.498" starttime="20190826 11:09:41.497"></status>
+</kw>
+<kw type="foritem" name="${item} = 4">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20190826 11:09:41.499" level="INFO">4</msg>
+<status status="PASS" endtime="20190826 11:09:41.499" starttime="20190826 11:09:41.498"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.499" starttime="20190826 11:09:41.498"></status>
+</kw>
+<kw type="foritem" name="${item} = 6">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20190826 11:09:41.499" level="INFO">6</msg>
+<status status="PASS" endtime="20190826 11:09:41.500" starttime="20190826 11:09:41.499"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.500" starttime="20190826 11:09:41.499"></status>
+</kw>
+<kw type="foritem" name="${item} = 8">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20190826 11:09:41.500" level="INFO">8</msg>
+<status status="PASS" endtime="20190826 11:09:41.500" starttime="20190826 11:09:41.500"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.500" starttime="20190826 11:09:41.500"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.500" starttime="20190826 11:09:41.497"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.501" critical="yes" starttime="20190826 11:09:41.496"></status>
+</test>
+<test id="s1-t2" name="exitLoopCase">
+<kw type="for" name="${item} IN RANGE [ 10 ]">
+<kw type="foritem" name="${item} = 0">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${item}*10</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190826 11:09:41.503" level="INFO">${result} = 0</msg>
+<status status="PASS" endtime="20190826 11:09:41.503" starttime="20190826 11:09:41.502"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190826 11:09:41.504" level="INFO">${result} = 0.0</msg>
+<status status="PASS" endtime="20190826 11:09:41.504" starttime="20190826 11:09:41.503"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${result}&gt;30</arg>
+</arguments>
+<status status="PASS" endtime="20190826 11:09:41.504" starttime="20190826 11:09:41.504"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20190826 11:09:41.505" level="INFO">0.0</msg>
+<status status="PASS" endtime="20190826 11:09:41.505" starttime="20190826 11:09:41.504"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.505" starttime="20190826 11:09:41.502"></status>
+</kw>
+<kw type="foritem" name="${item} = 1">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${item}*10</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190826 11:09:41.506" level="INFO">${result} = 10</msg>
+<status status="PASS" endtime="20190826 11:09:41.506" starttime="20190826 11:09:41.505"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190826 11:09:41.506" level="INFO">${result} = 10.0</msg>
+<status status="PASS" endtime="20190826 11:09:41.506" starttime="20190826 11:09:41.506"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${result}&gt;30</arg>
+</arguments>
+<status status="PASS" endtime="20190826 11:09:41.507" starttime="20190826 11:09:41.507"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20190826 11:09:41.507" level="INFO">10.0</msg>
+<status status="PASS" endtime="20190826 11:09:41.508" starttime="20190826 11:09:41.507"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.508" starttime="20190826 11:09:41.505"></status>
+</kw>
+<kw type="foritem" name="${item} = 2">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${item}*10</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190826 11:09:41.508" level="INFO">${result} = 20</msg>
+<status status="PASS" endtime="20190826 11:09:41.508" starttime="20190826 11:09:41.508"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190826 11:09:41.509" level="INFO">${result} = 20.0</msg>
+<status status="PASS" endtime="20190826 11:09:41.509" starttime="20190826 11:09:41.509"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${result}&gt;30</arg>
+</arguments>
+<status status="PASS" endtime="20190826 11:09:41.510" starttime="20190826 11:09:41.509"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20190826 11:09:41.510" level="INFO">20.0</msg>
+<status status="PASS" endtime="20190826 11:09:41.510" starttime="20190826 11:09:41.510"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.510" starttime="20190826 11:09:41.508"></status>
+</kw>
+<kw type="foritem" name="${item} = 3">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${item}*10</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190826 11:09:41.511" level="INFO">${result} = 30</msg>
+<status status="PASS" endtime="20190826 11:09:41.511" starttime="20190826 11:09:41.510"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190826 11:09:41.512" level="INFO">${result} = 30.0</msg>
+<status status="PASS" endtime="20190826 11:09:41.512" starttime="20190826 11:09:41.511"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${result}&gt;30</arg>
+</arguments>
+<status status="PASS" endtime="20190826 11:09:41.512" starttime="20190826 11:09:41.512"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20190826 11:09:41.513" level="INFO">30.0</msg>
+<status status="PASS" endtime="20190826 11:09:41.513" starttime="20190826 11:09:41.512"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.513" starttime="20190826 11:09:41.510"></status>
+</kw>
+<kw type="foritem" name="${item} = 4">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${item}*10</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190826 11:09:41.514" level="INFO">${result} = 40</msg>
+<status status="PASS" endtime="20190826 11:09:41.514" starttime="20190826 11:09:41.513"></status>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<doc>Converts the given item to a floating point number.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190826 11:09:41.514" level="INFO">${result} = 40.0</msg>
+<status status="PASS" endtime="20190826 11:09:41.514" starttime="20190826 11:09:41.514"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${result}&gt;30</arg>
+</arguments>
+<msg timestamp="20190826 11:09:41.515" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" endtime="20190826 11:09:41.515" starttime="20190826 11:09:41.515"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.515" starttime="20190826 11:09:41.513"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.515" starttime="20190826 11:09:41.502"></status>
+</kw>
+<status status="PASS" endtime="20190826 11:09:41.515" critical="yes" starttime="20190826 11:09:41.501"></status>
+</test>
+<status status="PASS" endtime="20190826 11:09:41.516" starttime="20190826 11:09:41.253"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Conditionex" pass="2">Conditionex</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
